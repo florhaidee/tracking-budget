@@ -13,7 +13,7 @@ request.onsuccess = function(event) {
     db = event.target.result;
     // check if app is online, if yes run uploadTransaction() function to send all local db data to api
     if (navigator.onLine) {
-      //uploadTransaction();
+      uploadTransaction();
     }
 };
 
@@ -23,14 +23,14 @@ request.onerror = function(event) {
 
 // This function will be executed if user attempt to submit a new transaction and there's no internet connection
 function saveRecord(record) {
-    const transaction = db.transaction(['new_entry'], 'readwrite');
-    const entryObjectStore = transaction.objectStore('new_entry');
+    const transaction = db.transaction(["new_entry"], "readwrite");
+    const entryObjectStore = transaction.objectStore("new_entry");
     entryObjectStore.add(record);
 }
 
 function uploadTransaction() {
-    const transaction = db.transaction(['new_entry'], 'readwrite');
-    const entryObjectStore = transaction.objectStore('new_entry');
+    const transaction = db.transaction(["new_entry"], "readwrite");
+    const entryObjectStore = transaction.objectStore("new_entry");
     const getAll = entryObjectStore.getAll();
   
     // upon a successful .getAll() execution, run this function and if there was data in indexedDb's store, let's send it to the api server
