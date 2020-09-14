@@ -1,4 +1,5 @@
 const FILES_TO_CACHE = [
+  "/",
   "./index.html",
   "./js/idb.js",
   "./js/index.js",
@@ -7,6 +8,7 @@ const FILES_TO_CACHE = [
 const APP_PREFIX = "TrackingBudget-";
 const VERSION = "version_01";
 const CACHE_NAME = APP_PREFIX + VERSION;
+
 // Install the service worker
 self.addEventListener('install', function (e) {
   e.waitUntil(
@@ -48,11 +50,24 @@ self.addEventListener('fetch', function (e) {
         return request
       } else {
         console.log('file is not cached, fetching : ' + e.request.url)
-        return fetch(e.request)
+        return fetch(e.request).then(
+            function(response) {
+              // Check if we received a valid response
+              if(!response || response.status !== 200 || response.type !== 'basic') {
+                return response;
+              }
+              var responseToCache = response.clone();  
+              caches.open(CACHE_NAME)
+                .then(function(cache) {
+                  cache.put(e.request, responseToCache);
+                });
+  
+              return response;
+            }
+          );
       }
 
-      //You can omit if/else for console.log & put one line below like this too
-      //return request || fetch(e.request)
     })
   )
 });
+
