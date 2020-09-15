@@ -1,10 +1,11 @@
 # Tracking Budget ![badge](https://img.shields.io/badge/license-MIT-blue) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 
- An PWA web app 
 
   ## Description 
 
-  A  back-end for a social network web application where you can create, delete, update, and see all users, add friends, share thoughts or reactions to other thoughts.
+    An PWA web app to track your withdrawals and deposits with or without a data/internet connection.
+
+ ![web app](./public/images/tracking-budget.png)
 
   ## Table of Contents 
   * [Installation](#installation)
@@ -15,37 +16,35 @@
   
   ## Installation
 
-    1. Download or clone this repository on your computer.
+    1. On your computer or phone, open Chrome.
 
-   ![how download or clone repository](./public/assets/images/download.png)
+    2. Go to the link of the app:
 
-    2. To install all dependencies:
+https://aqueous-badlands-76578.herokuapp.com/
 
-        * Open your editor and open a new terminal
-        * Go to the root directory of the project, and type:
-        ```
-        npm init 
-        ```
-        * Install all the dependencies using npm
-        ```
-        npm install -y
+    3. At the top right of the address bar, click Install ➕.
 
-        ```
-        * You need to have mongoDB installed on your PC, for more information on how installed go to:
-https://docs.mongodb.com/manual/installation/ 
+    4. Follow the onscreen instructions to install the PWA.
+
+    5. And this is how it will appear:
+
+ ![app installed](./public/images/app.png)
 
 
   ## Usage
 
-  To know how to use this application, click on the two videos below:
+  1. To add a new transaction: type the "Name of transaction" and the "Transaction amount":
 
-  1. To see how to start the server and see how the routes for users and friends works, see the following video:
+   ![step 1](./public/images/step1.png)
+
+  2. Click on the buttons [➕ add Funds] or [- Subtract Funds] depending on the type of transaction to do:
+
+   ![step 2](./public/images/step2.png)
+
+  3. And then it will show up on the transaction history section:
+
+   ![step 3](./public/images/step3.png)
   
-[![Watch the video part 1](./public/assets/images/partOne.png)](https://drive.google.com/file/d/1ieBFP_qlu8bMqk21MtA8Hwuco0KYY-kG/view)
-
-  2. The second part, it shows how the Thoughts and Reactions's routes works, see the video below:
-
-[![Watch the video part 2](./public/assets/images/partTwo.png)](https://drive.google.com/file/d/15hBm_P43NqvqQWUXymoYxqbppbTkTgUS/view)
 
   ## License
 
@@ -69,7 +68,7 @@ https://www.contributor-covenant.org/version/2/0/code_of_conduct/ to have more i
   ## Questions
 
     If you have more questions about this application, you can contact me by:
-      email: florhaideeg@gmail.com
+      email: florhaideedev@gmail.com
       GitHub username: florhaidee
 
 
